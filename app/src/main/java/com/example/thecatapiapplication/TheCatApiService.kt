@@ -17,7 +17,7 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(API_URL)
     .build()
 interface TheCatApiService {
-    @GET("images/search")
+    @GET("images/search?limit=20") //api_key=d116de55-877e-4a88-846c-8937466a4af8
     suspend fun getPhotos(): List<CatPhoto>
 }
 object CatApi {
