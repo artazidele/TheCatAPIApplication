@@ -1,11 +1,22 @@
 package com.example.thecatapiapplication
 
+import android.app.AlertDialog
+import android.app.PendingIntent.getActivity
+import android.content.Context
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.adapter.FragmentViewHolder
+import com.bumptech.glide.Glide
 import com.example.thecatapiapplication.databinding.GridViewItemBinding
+import java.security.AccessController.getContext
+import kotlin.coroutines.CoroutineContext
+import kotlin.coroutines.coroutineContext
 
 class CatPhotoGridAdapter :
     ListAdapter<CatPhoto, CatPhotoGridAdapter.CatPhotosViewHolder>(DiffCallback) {
@@ -37,5 +48,24 @@ class CatPhotoGridAdapter :
     override fun onBindViewHolder(holder: CatPhotosViewHolder, position: Int) {
         val catPhoto = getItem(position)
         holder.bind(catPhoto)
+        holder.itemView.setOnClickListener {
+            openImageWindow(catPhoto, holder.itemView.context)
+        }
+
     }
+    private fun openImageWindow(catPhoto: CatPhoto, context: Context) {
+        val dialogView = LayoutInflater.from(context).inflate(R.layout.rate_cat_photo_window, null)
+        val builder = AlertDialog.Builder(context)
+            .setView(dialogView)
+        val alertDialog = builder.show()
+        val catImage = dialogView.findViewById<ImageView>(R.id.cat_image_view)
+        Glide.with(context)
+            .load(catPhoto.url)
+            .into(catImage)
+
+        dialogView.findViewById<Button>(R.id.cancel_button).setOnClickListener {
+            alertDialog.dismiss()
+        }
+    }
+
 }
