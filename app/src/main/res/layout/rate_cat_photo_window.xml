@@ -31,6 +31,7 @@
         app:layout_constraintTop_toBottomOf="@id/cat_image_view">
         <Button
             android:layout_width="150dp"
+            android:id="@+id/rate_negative_button"
             android:layout_height="60dp"
             android:drawableTop="@drawable/thumb_down_icon"
             android:paddingTop="0dp"
@@ -39,6 +40,7 @@
         <Button
             android:layout_width="150dp"
             android:layout_height="60dp"
+            android:id="@+id/rate_positive_button"
             android:drawableTop="@drawable/thumb_up_icon"
             android:paddingTop="0dp"
             android:backgroundTint="@color/white"

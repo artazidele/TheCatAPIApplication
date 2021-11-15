@@ -35,6 +35,12 @@ class OverviewFragment : Fragment() {
             .setView(dialogView)
         val alertDialog = builder.show()
 
+        dialogView.findViewById<Button>(R.id.rate_positive_button).setOnClickListener {
+            // Make TOAST
+        }
+        dialogView.findViewById<Button>(R.id.rate_negative_button).setOnClickListener {
+            // Make TOAST
+        }
         dialogView.findViewById<Button>(R.id.cancel_button).setOnClickListener {
             alertDialog.dismiss()
         }
