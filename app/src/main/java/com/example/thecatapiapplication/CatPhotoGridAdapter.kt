@@ -3,11 +3,13 @@ package com.example.thecatapiapplication
 import android.app.AlertDialog
 import android.app.PendingIntent.getActivity
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -62,7 +64,12 @@ class CatPhotoGridAdapter :
         Glide.with(context)
             .load(catPhoto.url)
             .into(catImage)
-
+        dialogView.findViewById<Button>(R.id.rate_positive_button).setOnClickListener {
+            Toast.makeText(context, "You rated positive.", Toast.LENGTH_SHORT).show()
+        }
+        dialogView.findViewById<Button>(R.id.rate_negative_button).setOnClickListener {
+            Toast.makeText(context, "You rated negative.", Toast.LENGTH_SHORT).show()
+        }
         dialogView.findViewById<Button>(R.id.cancel_button).setOnClickListener {
             alertDialog.dismiss()
         }
