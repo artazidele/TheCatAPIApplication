@@ -2,14 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@drawable/rate_dialog_border"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="6dp">
+    android:padding="16dp">
     <Button
         android:layout_width="48dp"
-        android:layout_height="60dp"
-        android:drawableTop="@drawable/cancel_icon"
-        android:paddingTop="0dp"
-        android:backgroundTint="@color/white"
+        android:layout_height="48dp"
+        android:drawableLeft="@drawable/cancel_icon"
+        android:padding="0dp"
+        android:background="@color/white"
         android:drawableTint="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -26,25 +27,23 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cat_image_view">
         <Button
-            android:layout_width="150dp"
+            android:layout_width="96dp"
+            style="@style/Button_Style"
             android:id="@+id/rate_negative_button"
-            android:layout_height="60dp"
-            android:drawableTop="@drawable/thumb_down_icon"
-            android:paddingTop="0dp"
-            android:backgroundTint="@color/white"
-            android:drawableTint="@color/black"/>
+            android:layout_height="56dp"
+            android:drawableTop="@drawable/thumb_down_icon" />
+
         <Button
-            android:layout_width="150dp"
-            android:layout_height="60dp"
             android:id="@+id/rate_positive_button"
-            android:drawableTop="@drawable/thumb_up_icon"
-            android:paddingTop="0dp"
-            android:backgroundTint="@color/white"
-            android:drawableTint="@color/black"/>
+            style="@style/Button_Style"
+            android:layout_width="96dp"
+            android:layout_height="56dp"
+            android:drawableTop="@drawable/thumb_up_icon" />
     </LinearLayout>
 
 

@@ -29,6 +29,10 @@ class CatPhotoGridAdapter :
             binding.photo = catPhoto
             binding.executePendingBindings()
         }
+//        fun bindOnePhoto(catPhoto: CatPhoto) {
+//            binding.photo = catPhoto
+//            binding.executePendingBindings()
+//        }
     }
     companion object DiffCallback : DiffUtil.ItemCallback<CatPhoto>() {
         override fun areItemsTheSame(oldItem: CatPhoto, newItem: CatPhoto): Boolean {
@@ -53,7 +57,6 @@ class CatPhotoGridAdapter :
         holder.itemView.setOnClickListener {
             openImageWindow(catPhoto, holder.itemView.context)
         }
-
     }
     private fun openImageWindow(catPhoto: CatPhoto, context: Context) {
         val dialogView = LayoutInflater.from(context).inflate(R.layout.rate_cat_photo_window, null)
