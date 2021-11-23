@@ -29,10 +29,6 @@ class CatPhotoGridAdapter :
             binding.photo = catPhoto
             binding.executePendingBindings()
         }
-//        fun bindOnePhoto(catPhoto: CatPhoto) {
-//            binding.photo = catPhoto
-//            binding.executePendingBindings()
-//        }
     }
     companion object DiffCallback : DiffUtil.ItemCallback<CatPhoto>() {
         override fun areItemsTheSame(oldItem: CatPhoto, newItem: CatPhoto): Boolean {
